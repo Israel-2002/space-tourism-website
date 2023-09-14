@@ -1,0 +1,193 @@
+.technology {
+  background-image: url(/images/technology/background-technology-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint(tablet) {
+    background-image: url(/images/technology/background-technology-tablet.jpg);
+  }
+
+  @include breakpoint(laptop) {
+    background-image: url(/images/technology/background-technology-desktop.jpg);
+    text-align: left;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+
+    @include breakpoint(laptop) {
+      width: 90%;
+    }
+
+    @media ((min-width: 1024px) and (max-width: 1440px)) {
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &__title {
+    font-family: "Barlow Condensed", sans-serif;
+    text-align: center;
+    margin: 0 auto 2rem ;
+
+    @include breakpoint(tablet) {
+      text-align: left;
+      margin: 0 auto 3.75rem 5%;
+    }
+
+    @include breakpoint(laptop) {
+      margin: 0 auto 3.75rem 0;
+    }
+  }
+
+  .technologies {
+    display: flex;
+    flex-direction: column-reverse;
+    color: $color-blue;
+    text-align: center;
+
+    @include breakpoint(laptop) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5rem;
+      text-align: left;
+    }
+
+    @include breakpoint(desktop) {
+      align-items: center;
+    }
+
+    &__nav {
+      width: fit-content;
+      margin-inline: auto;
+      color: $color-white;
+      margin-bottom: 1.625rem;
+
+      @include breakpoint(tablet) {
+        margin-bottom: 2.75rem;
+      }
+
+      & ul {
+        display: flex;
+        gap: 1rem;
+
+        @include breakpoint(laptop) {
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        & li {
+          width: 2.5rem;
+          height: 2.5rem;
+          border: 1px solid rgba($color-white, 0.25);
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          font-family: "Bellefair", serif;
+
+          @include breakpoint(tablet) {
+            width: 3.75rem;
+            height: 3.75rem;
+          }
+
+          @include breakpoint(desktop) {
+            width: 5rem;
+            height: 5rem;
+          }
+
+          & a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+          }
+
+          & a:hover,
+          & a.active {
+            font-weight: bolder;
+            background-color: $color-white;
+            color: $color-dark;
+            border: 0;
+          }
+        }
+      }
+    }
+
+    &__left {
+      width: 90%;
+      margin-inline: auto;
+
+      @include breakpoint(tablet) {
+        width: 95%;
+      }
+
+      @include breakpoint(laptop) {
+        width: 100%;
+        display: flex;
+        gap: 5rem;
+      }
+    }
+
+    &__mini-title {
+      font-size: clamp(0.875rem, 0.838rem + 0.1852vw, 1rem);
+      font-family: "Barlow Condensed", serif;
+      font-weight: normal;
+      letter-spacing: 2.36px;
+      text-transform: uppercase;
+      margin-bottom: 0.5625rem;
+
+      @include breakpoint(tablet) {
+        margin-bottom: 1rem;
+        letter-spacing: 2.7px;
+      }
+    }
+
+    &__name {
+      font-size: clamp(1.5rem, 0.9074rem + 2.963vw, 3.5rem);
+      font-weight: normal;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: $color-white;
+    }
+
+    &__description {
+      font-size: 0.9375rem;
+      max-width: 650px;
+      margin-inline: auto;
+
+      @include breakpoint(laptop) {
+        font-size: 1rem;
+      }
+    }
+
+    &__right {
+      & img {
+        width: 100%;
+        margin-bottom: 2.125rem;
+
+        @include breakpoint(tablet) {
+          margin-bottom: 3.5rem;
+        }
+      }
+    }
+
+    &__landscape {
+      @include breakpoint(laptop) {
+        display: none;
+      }
+    }
+
+    &__portrait {
+      @media (max-width: 1023px) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin-inline: auto;
+
+  @include breakpoint(tablet) {
+    width: 95%;
+  }
+
+  @include breakpoint(desktop) {
+    width: 90%;
+  }
+}
+
+section {
+  padding-block: 5.5rem 3.625rem;
+
+  @include breakpoint(tablet) {
+    padding-block: 8.5rem 4.125rem;
+  }
+  
+  @include breakpoint(desktop) {
+    padding-block: 13.25rem 7.375rem;
+  }
+}
+
+.mini-title {
+  font-size: clamp(1rem, 0.7857rem + 1.0714vw, 1.75rem);
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 2.7px;
+  font-weight: 300;
+  display: inline-block;
+  color: $color-blue;
+  text-transform: uppercase;
+  color: $color-white;
+
+  @include breakpoint(tablet) {
+    letter-spacing: 3.38px;
+  }
+
+  @include breakpoint(desktop) {
+    letter-spacing: 4.72px;
+  }
+
+  &-num {
+    font-size: clamp(1rem, 0.7857rem + 1.0714vw, 1.75rem);
+    margin-right: 1.125rem;
+    letter-spacing: 2.7px;
+    color: rgba($color-white, .25);
+
+    @include breakpoint(tablet) {
+      margin-right: 1.1875rem;
+      letter-spacing: 3.38px;
+    }
+
+    @include breakpoint(desktop) {
+      margin-right: 1.75rem;
+      letter-spacing: 4.72px;
+    }
+  }
+}

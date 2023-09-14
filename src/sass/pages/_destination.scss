@@ -1,0 +1,195 @@
+.destination {
+  background-image: url(/images/destination/background-destination-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: $color-white;
+  display: grid;
+  place-items: center;
+
+  @include breakpoint(tablet) {
+    background-image: url(/images/destination/background-destination-tablet.jpg);
+  }
+
+  @include breakpoint(laptop) {
+    background-image: url(/images/destination/background-destination-desktop.jpg);
+    text-align: left;
+  }
+
+  &__container {
+    @include breakpoint(laptop) {
+      width: 80%;
+      margin-inline: auto;
+    }
+  }
+
+  &__title {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+
+    @include breakpoint(tablet) {
+      text-align: left;
+      margin: 0 auto 3.75rem 2.5%;
+    }
+
+    @include breakpoint(desktop) {
+      margin: 0 auto 3.75rem 0;
+    }
+
+    & {
+      display: inline-block;
+      color: rgba($color-white, 0.25);
+    }
+  }
+
+  &__nav {
+    width: fit-content;
+    margin-inline: auto;
+    height: 1.75rem;
+    margin-bottom: 1.25rem;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 2rem;
+    }
+
+    @include breakpoint(laptop) {
+      margin: 0 auto 2rem 0;
+    }
+
+    & ul {
+      display: flex;
+      align-items: center;
+      gap: 1.625rem;
+      height: 100%;
+
+      & li {
+        height: 100%;
+
+        & a {
+          display: inline-block;
+          height: 100%;
+          font-size: 0.875rem;
+          font-family: "Barlow Condensed", sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 2.36px;
+          color: $color-blue;
+
+          &:hover,
+          &.active {
+            position: relative;
+            color: $color-white;
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 3px;
+              background-color: $color-white;
+            }
+          }
+
+          @include breakpoint(talet) {
+            font-size: 1rem;
+            letter-spacing: 2.7px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.destinations {
+  text-align: center;
+
+  @include breakpoint(laptop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    text-align: left;
+  }
+
+  &__image {
+    width: 10.625rem;
+    margin: 0 auto 1.625rem;
+
+    @include breakpoint(tablet) {
+      width: 18.75rem;
+      margin-bottom: 3.3125rem;
+    }
+
+    @include breakpoint(laptop) {
+      width: 23rem;
+    }
+
+    @include breakpoint(desktop) {
+      width: 27.8125rem;
+    }
+  }
+
+  &__name {
+    font-size: clamp(3.5rem, 0.7857rem + 1.0714vw, 6.25rem);
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 0.0625rem;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__description {
+    color: $color-blue;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #383b4b;
+    margin-bottom: 2rem;
+    max-width: 580px;
+    margin-inline: auto;
+
+    @include breakpoint(tablet) {
+      padding-bottom: 3.0625rem;
+      margin-bottom: 1.75rem;
+    }
+
+    @include breakpoint(laptop) {
+      max-width: 450px;
+      margin: 0 auto 1.75rem 0;
+    }
+  }
+
+  &__time {
+    display: grid;
+    gap: 2rem;
+
+    @include breakpoint(tablet) {
+      width: fit-content;
+      margin-inline: auto;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+
+    @include breakpoint(laptop) {
+      margin: 0 auto 0 0;
+    }
+  }
+
+  &__distance,
+  &__travel {
+    display: grid;
+    gap: 0.75rem;
+    font-family: "Bellefair", serif;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+
+    & span {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 0.875rem;
+      color: $color-blue;
+      letter-spacing: 2.36px;
+    }
+  }
+}

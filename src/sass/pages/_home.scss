@@ -1,0 +1,90 @@
+.home {
+  background-image: url(/images/home/background-home-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: $color-white;
+  text-align: center;
+
+  @include breakpoint(tablet) {
+    background-image: url(/images/home/background-home-tablet.jpg);
+    display: grid;
+    place-items: center;
+  }
+
+  @include breakpoint(laptop) {
+    background-image: url(/images/home/background-home-desktop.jpg);
+    text-align: left;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding-block: 10rem 5rem;
+
+    @include breakpoint(laptop) {
+      width: 80%;
+      margin-inline: auto;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 8rem;
+      transform: translateY(2rem);
+      padding-block: 0;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: clamp(5rem, 3.75rem + 6.25vw, 9.375rem);
+    font-weight: 300;
+    margin-bottom: 1rem;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 1.5rem;
+    }
+
+    & span {
+      color: $color-blue;
+      margin-bottom: 1rem;
+      display: block;
+    }
+  }
+
+  &__description {
+    font-size: clamp(0.9375rem, 0.8839rem + 0.2679vw, 1.125rem);
+    max-width: 600px;
+    margin-inline: auto;
+    color: $color-blue;
+
+    @media (min-width: 1280px) {
+      max-width: 550px;
+      margin: 0 auto 0 0;
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 9.375rem;
+    height: 9.375rem;
+    background-color: $color-white;
+    color: $color-dark;
+    border-radius: 50%;
+    font-family: "Bellefair", serif;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+
+    @include breakpoint(tablet) {
+      width: 15.125rem;
+      height: 15.125rem;
+      font-size: 2rem;
+    }
+
+    @include breakpoint(desktop) {
+      width: 17.125rem;
+      height: 17.125rem;
+    }
+  }
+}
